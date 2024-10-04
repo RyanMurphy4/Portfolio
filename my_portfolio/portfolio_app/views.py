@@ -9,4 +9,6 @@ def index(request):
     })
 
 def projects(request):
-    return HttpResponse("Your Projects will be located on this page")
+    return render(request, 'portfolio_app/projects.html', {
+        "nothing": "NOTHING"
+    })

@@ -7,8 +7,10 @@
 </head>
 <body>
     {% for num in nums %}
-<p><b> {{num}} </b></p>
+    
+<p><b> {{num|add:1}}.</b> <a href="{% url 'portfolio-projects' %}"> VIEW MY PROJECT </a></p>
     {% endfor %}
+
 
 </body>
 </html>
