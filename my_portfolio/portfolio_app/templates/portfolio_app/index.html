@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ryan's Portfolio</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files  %}
+<link rel="stylesheet" href="{% static "portfolio_app/port_css.css" %}">
+{% endblock %}
+
+{% block page_title %} Home Page {% endblock %}
+
+{% block content %}
     {% for num in nums %}
-    
-<p><b> {{num|add:1}}.</b> <a href="{% url 'portfolio-projects' %}"> VIEW MY PROJECT </a></p>
+    <p><b> {{num|add:1}}.</b> <a href="{% url 'portfolio-projects' %}"> VIEW MY PROJECT </a></p>
     {% endfor %}
+{% endblock %}
 
 
-</body>
-</html>
