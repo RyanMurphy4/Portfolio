@@ -1,4 +1,63 @@
-ul {
-    list-style: none;
-    background: red;
+/* Container styling for projects */
+.container {
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+/* Card styling */
+.card {
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    padding: 15px; 
+}
+/* Lift on hover */
+.card:hover {
+    transform: translateY(-4px); 
+}
+
+/* Adjust card image height */
+.card-img-top {
+    object-fit: cover; 
+    height: 200px;
+    width: 100%; 
+    border-top-left-radius: 8px; 
+    border-top-right-radius: 8px; 
+}
+
+/* Card title */
+.card-title {
+    font-size: 1.25rem; 
+    margin-bottom: 0.5rem; 
+}
+
+/* Card text styling */
+.card-text {
+    font-size: 0.9rem; 
+    color: #6c757d; 
+}
+
+/* Button padding */
+.card .btn {
+    margin-right: 0.5rem; 
+}
+
+/* Responsive layout */
+@media (min-width: 768px) {
+    .card {
+        margin-bottom: 1.5rem; 
+    }
+}
+
+@media (max-width: 767px) {
+    .card {
+        margin-bottom: 1rem; 
+    }
+}
+
+/* Flexbox for card body */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
 }

@@ -1,13 +1,57 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block page_title %}Projects{% endblock%}
-
+{% block page_title %}Projects{% endblock %}
+ {%block css_files %} <link rel="stylesheet" href="{% static "portfolio_app/port_css.css" %}"> {% endblock%}
 {% block content %}
-{% for project in projects %}
-{{project.title}}
-<br>
-{{project.description}}
-<img src="{% static 'portfolio_app/images/project.png' %}">
-{% endfor %}
-{% endblock%}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">My Projects</h1>
+    <div class="row">
+        {% for project in projects %}
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <img src="{% static project.image_url %}" class="card-img-top" alt="{{ project.title }}">
+
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ project.title }}</h5>
+
+                    
+                    {% comment %} <p class="card-text">{{ project.description }}</p> {% endcomment %}
+                    <ul>
+                    {% for detail in project.description%}
+                    <li>{{detail}}</li>
+                    {% endfor %}
+                    </ul>
+
+
+
+
+                    <div class="mt-auto">
+                        {% if project.github_url %}
+                        <a href="{{ project.github_url }}" class="btn btn-primary btn-sm" target="_blank">
+                            View on GitHub
+                        </a>
+                        {% else %}
+                        <a href="#" class="btn btn-primary btn-sm disabled">
+                            View on Github
+                        </a>
+                        {% endif %}
+
+                        {% if project.project_url %}
+                        <a href="{{ project.project_url }}" class="btn btn-primary btn-sm" target="_blank">
+                            Visit Project
+                        </a>
+                        {% else %}
+                        <a href="{{ project.project_url }}" class="btn btn-primary btn-sm disabled" target="_blank">
+                            Visit Project
+                        </a>
+
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
