@@ -1,16 +1,52 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block css_files  %}
-{% comment %} <link rel="stylesheet" href="{% static "portfolio_app/port_css.css" %}"> {% endcomment %}
-{% endblock %}
-
+{% comment %} {% block css_files  %} {% endblock %} {% endcomment %}
+{%block css_files %} <link rel="stylesheet" href="{% static "portfolio_app/home.css" %}"> {% endblock%}
 {% block page_title %} Home Page {% endblock %}
 
 {% block content %}
-    {% for num in nums %}
-    <p><b> {{num|add:1}}.</b> <a href="{% url "portfolio-projects" %}"> VIEW MY PROJECT </a></p>
-    {% endfor %}
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-4">
+                <img src="{% static 'portfolio_app/images/me.jpg' %}" alt="Ryan Murphy" class="profile-pic" >
+            </div>
+            <div class="col-md-8">
+                <div class="hero-text">
+                    <h1>Hello, I'm Ryan!</h1>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="skills-section">
+    <div class="container">
+        <h2>Skills & Technologies</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Programming Languages</h3>
+                <ul>
+                    {% for language in languages %}
+                    <li><img src="{% static language.image %}" height="50px" width="50px">{{language.name}}</li>
+                    {% endfor %}
+                    
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h3>Libraries & Frameworks</h3>
+                <ul>
+                    {% for framework in frameworks %}
+                    <li><img src="{%static framework.image %}" height="50px" width="50px">{{framework.name}}</li>
+                    {% endfor %}
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
 
 
