@@ -80,6 +80,9 @@ frameworks = [
 
      {"name": "Selenium",
      "image": "portfolio_app/images/selenium_logo.png"},
+
+    {"name": "OpenCV",
+     "image": "portfolio_app/images/opencv_logo.png"},
      
 
 
