@@ -2,7 +2,10 @@
 {% load static %}
 
 {% comment %} {% block css_files  %} {% endblock %} {% endcomment %}
-{%block css_files %} <link rel="stylesheet" href="{% static "portfolio_app/home.css" %}"> {% endblock%}
+{%block css_files %} 
+<link rel="stylesheet" href="{% static 'styles.css' %}">
+<link rel="stylesheet" href="{% static "portfolio_app/home.css" %}"> 
+{% endblock%}
 {% block page_title %} Home Page {% endblock %}
 
 {% block content %}

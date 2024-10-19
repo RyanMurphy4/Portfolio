@@ -10,7 +10,7 @@ html {
 /* Hero Section Styles */
 .hero-section {
     padding: 60px 0;
-    background-color: #f8f9fa;
+    /* background-color: #f8f9fa; */
     display: flex;
     align-items: center;
 }
@@ -55,7 +55,7 @@ html {
 /* Skills Section Styles */
 .skills-section {
     padding: 60px 0;
-    background-color: #fff;
+    /* background-color: #fff; */
 }
 
 .skills-section h2 {
